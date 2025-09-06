@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.dot{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    background: #001300;
+    flex-wrap: wrap;
+    overflow: hidden;
+    animation: changingCOlor 3s linear infinite;
+}
+@keyframes changingCOlor {
+    100%{
+    filter: hue-rotate(360deg);
+    }
+}
+span{
+    height: 40px;
+    width: 40px;
+    display: block;
+    position: relative;
+}
+span::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    background: #00ff0a;
+    pointer-events: none;
+    transition: 10s;
+    transform: scale(0.1);
+    box-shadow: 0 0 10px #00ff0a,
+                0 0 20px #00ff0a,
+                0 0 40px #00ff0a,
+                0 0 60px #00ff0a,
+                0 0 80px #00ff0a,
+                0 0 100px #00ff0a;
+}
+span:hover::before{
+    transform: scale(1);
+    transition: 0s;
+}
